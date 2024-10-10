@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental - Tourism Management System</title>
+    <link rel="stylesheet" href="Car Rental.css">
+    <style>
+        body {
+            background-image: url('carRental.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        p {
+            color: hwb(0 6% 12% / 0.703);
+            /* Change text color to dark gray */
+        }
+    </style>
+</head>
+
+<body>
+   
+    <main>
+        <h1>Car Rental</h1>
+        <form>
+            <label for="pickup-location">Pickup Location:</label>
+            <input type="text" id="pickup-location" name="pickup-location"><br><br>
+            <label for="dropoff-location">Dropoff Location:</label>
+            <input type="text" id="dropoff-location" name="dropoff-location"><br><br>
+            <label for="pickup-date">Pickup Date:</label>
+            <input type="date" id="pickup-date" name="pickup-date"><br><br>
+            <label for="dropoff-date">Dropoff Date:</label>
+            <input type="date" id="dropoff-date" name="dropoff-date"><br><br>
+            <label for="car-type">Car Type:</label>
+            <select id="car-type" name="car-type">
+                <option value="economy">Economy</option>
+                <option value="compact">Compact</option>
+                <option value="mid-size">Mid-size</option>
+                <option value="full-size">Full-size</option>
+            </select><br><br>
+            <input type="submit" value="Book Now">
+        </form>
+       
+    </main>
+    <footer>
+        <p>&copy; 2024 Tourism Management System</p>
+    </footer>
+</body>
+
+</html>

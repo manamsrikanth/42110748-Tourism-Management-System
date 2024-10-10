@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign Up - GO TRIP</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('signup.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .signup-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #333;
+            /* changed header color to dark gray */
+        }
+
+        nav {
+            background-color: #f0f0f0;
+            /* added navigation bar background color */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            /* changed navigation link color to dark gray */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #00698f;
+            /* changed navigation link hover color to blue */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="main.html">Home</a>
+        <a href="services.html">Service</a>
+        <a href="contact.html">Contact</a>
+        <a href="About.html">About</a>
+
+    </nav>
+    <div class="signup-container">
+        <form action="signup.php" method="post">
+            <h1 style="color: #00698f;">Sign Up</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password"><br><br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+
+</html>

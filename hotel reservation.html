@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation - Tourism Management System</title>
+    <link rel="stylesheet" href="hotel reservation.css">
+    <style>
+        body {
+            background-image: url('hotel.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        p {
+            color: hwb(0 6% 12% / 0.703);
+            /* Change text color to dark gray */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+           
+        </nav>
+    </header>
+    <main>
+        <h1>Hotel Reservation</h1>
+        <form>
+            <label for="check-in">Check-in Date:</label>
+            <input type="date" id="check-in" name="check-in"><br><br>
+            <label for="check-out">Check-out Date:</label>
+            <input type="date" id="check-out" name="check-out"><br><br>
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
+            </select><br><br>
+            <label for="adults">Number of Adults:</label>
+            <input type="number" id="adults" name="adults"><br><br>
+            <label for="children">Number of Children:</label>
+            <input type="number" id="children" name="children"><br><br>
+            <input type="submit" value="Book Now">
+        </form>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Tourism Management System</p>
+    </footer>
+</body>
+
+</html>

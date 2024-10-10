@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Tours - Tourism Management System</title>
+    <link rel="stylesheet" href="package Tours.css">
+    <style>
+        body {
+            background-image: url('packageTours.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        p {
+            color: hwb(0 6% 12% / 0.703);
+            /* Change text color to dark gray */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+           
+        </nav>
+    </header>
+    <main>
+        <h1>Package Tours</h1>
+        <section>
+            <h2>Our Package Tours</h2>
+            <p>We offer a variety of package tours to suit your needs. From adventure to relaxation, we have a package
+                for everyone.</p>
+            
+        </section>
+        <section>
+            <h2>Customize Your Tour</h2>
+            <form>
+                <label for="tour-type">Tour Type:</label>
+                <select id="tour-type" name="tour-type">
+                    <option value="adventure">Adventure</option>
+                    <option value="relaxation">Relaxation</option>
+                    <option value="culture">Culture</option>
+                </select><br><br>
+                <label for="duration">Duration:</label>
+                <select id="duration" name="duration">
+                    <option value="3-days">3 Days</option>
+                    <option value="5-days">5 Days</option>
+                    <option value="7-days">7 Days</option>
+                </select><br><br>
+                <label for="budget">Budget:</label>
+                <input type="number" id="budget" name="budget"><br><br>
+                <input type="submit" value="Get Quote">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tourism Management System</p>
+    </footer>
+</body>
+
+</html>

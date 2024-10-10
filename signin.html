@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In - GO TRIP</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .signin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('signin.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+             background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        h1 {
+            color: #333; /* changed header color to dark gray */
+        }
+         nav {
+            background-color: #f0f0f0; /* added navigation bar background color */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #333; /* changed navigation link color to dark gray */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            color: #00698f; /* changed navigation link hover color to blue */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Service</a>
+        <a href="contact.html">Contact</a>
+        <a href="About.html">About</a>
+
+    </nav>
+    <div class="signin-container">
+        <form>
+            
+            <h1>Sign In</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Sign In">
+        </form>
+        <p style="text-align: center; margin-bottom: -500px; color: #00698f;">Don't have an account? <a href="signup.html">Sign
+                Up</a></p>
+    </div>
+</body>
+
+</html>
