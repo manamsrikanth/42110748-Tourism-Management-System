@@ -16,18 +16,20 @@ if ($conn->connect_error) {
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
-    $pickup_location = $_POST["pickup-location"];
-    $dropoff_location = $_POST["dropoff-location"];
-    $pickup_date = $_POST["pickup-date"];
-    $dropoff_date = $_POST["dropoff-date"];
-    $car_type = $_POST["car-type"];
+    $check_in = $_POST["check-in"];
+    $check_out = $_POST["check-out"];
+    $room_type = $_POST["room-type"];
+    $adults = $_POST["adults"];
+    $children = $_POST["children"];
+
     // Prepare the SQL query
- $stmt = $conn->prepare("INSERT INTO car_rental (pickup_location, dropoff_location, pickup_date, dropoff_date, car_type) VALUES (?, ?, ?, ?, ?)"); 
- $stmt->bind_param("sssss", $pickup_location, $dropoff_location, $pickup_date, $dropoff_date, $car_type);
+  $stmt = $conn->prepare("INSERT INTO hotel_bookings (check_in, check_out, room_type, adults, children) VALUES (?, ?, ?, ?, ?)");
+ $stmt->bind_param("sssss", $check_in, $check_out, $room_type, $adults, $children);
+
     // Execute the query
     if ($stmt->execute()) {
   // Redirect to booking_successful.php
- header('Location: car_booking_successful.php');
+ header('Location: hotel_booking_successful.php');
          exit;
         } else {
         echo "Error inserting data: " . $stmt->error;
@@ -42,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- HTML form to collect user input -->
 <html>
     <body>
-        <title>Car Rental</title>
+        <title>Hotel Booking</title>
         <style>
             /* Global Styles */
 
@@ -119,8 +121,8 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="date"] {
+input[type="date"],
+input[type="number"] {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -181,9 +183,9 @@ footer {
     clear: both;
 }
 
-/* Car Rental Form Styles */
+/* Hotel Reservation Form Styles */
 
-.car-rental-form {
+.hotel-reservation-form {
     width: 80%;
     margin: 40px auto;
     padding: 20px;
@@ -193,17 +195,17 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.car-rental-form h2 {
+.hotel-reservation-form h2 {
     margin-top: 0;
 }
 
-.car-rental-form label {
+.hotel-reservation-form label {
     display: block;
     margin-bottom: 10px;
 }
 
-.car-rental-form input[type="text"],
-.car-rental-form input[type="date"] {
+.hotel-reservation-form input[type="date"],
+.hotel-reservation-form input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -211,7 +213,7 @@ footer {
     border-radius: 10px;
 }
 
-.car-rental-form select {
+.hotel-reservation-form select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -219,7 +221,7 @@ footer {
     border-radius: 10px;
 }
 
-.car-rental-form input[type="submit"] {
+.hotel-reservation-form input[type="submit"] {
     background-color: #4CAF50;
     color: #fff;
     padding: 10px 20px;
@@ -228,23 +230,17 @@ footer {
     cursor: pointer;
 }
 
-.car-rental-form input[type="submit"]:hover {
+.hotel-reservation-form input[type="submit"]:hover {
     background-color: #3e8e41;
 }
 
-/* Available Cars List Styles */
+/* Available Hotels List Styles */
 
-.available-cars {
+.available-hotels {
     width: 80%;
     margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: ⬤
 }
-
-
 </style>
 </head>
 <body>
@@ -253,31 +249,21 @@ footer {
 </header>
 <main>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <label for="pickup-location">Pickup Location:</label>
-            <input type="text" id="pickup-location" name="pickup-location"><br><br>
-            <label for="dropoff-location">Dropoff Location:</label>
-            <input type="text" id="dropoff-location" name="dropoff-location"><br><br>
-            <label for="pickup-date">Pickup Date:</label>
-            <input type="date" id="pickup-date" name="pickup-date"><br><br>
-            <label for="dropoff-date">Dropoff Date:</label>
-            <input type="date" id="dropoff-date" name="dropoff-date"><br><br>
-            <label for="car-type">Car Type:</label>
-            <select id="car-type" name="car-type">
-                <option value="economy">Economy</option>
-                <option value="compact">Compact</option>
-                <option value="mid-size">Mid-size</option>
-                <option value="full-size">Full-size</option>
-                <option value="luxury">Luxury</option>
-                <option value="suv">SUV</option>
-                <option value="truck">Truck</option>
-                <option value="van">Van</option>
-                <option value="minivan">Minivan</option>
-                <option value="convertible">Convertible</option>
-                <option value="coupe">Coupe</option>
-                <option value="wagon">Wagon</option>
+            <label for="check-in">Check-in Date:</label>
+            <input type="date" id="check-in" name="check-in"><br><br>
+            <label for="check-out">Check-out Date:</label>
+            <input type="date" id="check-out" name="check-out"><br><br>
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
             </select><br><br>
+            <label for="adults">Number of Adults:</label>
+            <input type="number" id="adults" name="adults"><br><br>
+            <label for="children">Number of Children:</label>
+            <input type="number" id="children" name="children"><br><br>
             <input type="submit" value="Book Now">
-
         </form>
          <?php
         // Display the bookings table
